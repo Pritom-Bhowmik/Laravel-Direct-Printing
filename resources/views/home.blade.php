@@ -30,8 +30,7 @@
                         <h3>Student Details</h3>
                     </div>
                     <div>
-                        <a type="button" href="" class="btn btn-dark">Print</a>
-                        <a type="button" href="" class="btn btn-primary">Create</a>
+                        <a type="button" href="{{ route('print') }}" class="btn btn-dark">Print</a>
                     </div>
                 </div>
                 <table class="table table-bordered border-primary">
@@ -41,19 +40,21 @@
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
-                            <th scope="col">Designation</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">Roll</th>
+                            <th scope="col">Description</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>fff</td>
-                            <td>fff</td>
-                            <td>fff</td>
-                            <td>fff</td>
-                            <td>fff</td>
-                        </tr>
+                        @foreach ($students as $key => $item)
+                            <tr>
+                                <th scope="row">{{ $key+1 }}</th>
+                                <td>{{ $item->student_name }}</td>
+                                <td>{{ $item->student_email }}</td>
+                                <td>{{ $item->student_phone }}</td>
+                                <td>{{ $item->student_roll }}</td>
+                                <td>{{ $item->student_description }}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

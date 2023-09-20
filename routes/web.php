@@ -19,3 +19,6 @@ Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'index'])->na
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/print', [App\Http\Controllers\HomeController::class, 'print'])->name('print');
+
+
